@@ -1,0 +1,34 @@
+{
+    "name": "mekras/json-rpc-client",
+    "description": "JSON-RPC PSR-17/18 compatible client ",
+    "keywords": [
+        "json-rpc",
+        "psr-17",
+        "psr-18"
+    ],
+    "homepage": "https://github.com/mekras/json-rpc-client",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Михаил Красильников",
+            "email": "m.krasilnikov@yandex.ru"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "psr/http-client": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Mekras\\JsonRpc\\": "src/"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.5"
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Mekras\\JsonRpc\\Tests\\": "tests/"
+        }
+    }
+}
