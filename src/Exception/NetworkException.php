@@ -8,14 +8,14 @@
 
 declare(strict_types=1);
 
-namespace Mekras\JsonRpcClient\Exception\Client;
+namespace Mekras\JsonRpcClient\Exception;
 
 
 /**
- * The method does not exist / is not available.
+ * Request cannot be completed because of network issues.
  *
  * @since 1.0
  */
-class MethodNotFoundException extends ClientException
+class NetworkException extends RuntimeException
 {
 }

@@ -16,11 +16,13 @@
     ],
     "require": {
         "php": "^7.1",
-        "psr/http-client": "^1.0"
+        "ext-json": "*",
+        "psr/http-client": "^1.0",
+        "psr/http-factory": "^1.0"
     },
     "autoload": {
         "psr-4": {
-            "Mekras\\JsonRpc\\": "src/"
+            "Mekras\\JsonRpcClient\\": "src/"
         }
     },
     "require-dev": {
@@ -28,7 +30,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Mekras\\JsonRpc\\Tests\\": "tests/"
+            "Mekras\\JsonRpcClient\\Tests\\": "tests/"
         }
     }
 }

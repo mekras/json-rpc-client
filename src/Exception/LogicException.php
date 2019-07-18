@@ -8,7 +8,7 @@
 
 declare(strict_types=1);
 
-namespace Mekras\JsonRpc\Exception;
+namespace Mekras\JsonRpcClient\Exception;
 
 
 /**

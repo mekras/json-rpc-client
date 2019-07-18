@@ -8,14 +8,13 @@
 
 declare(strict_types=1);
 
-namespace Mekras\JsonRpcClient\Exception\Client;
-
+namespace Mekras\JsonRpcClient\Exception\Server;
 
 /**
- * The method does not exist / is not available.
+ * Invalid response from RPC server.
  *
  * @since 1.0
  */
-class MethodNotFoundException extends ClientException
+class InvalidResponseException extends ServerException
 {
 }

@@ -8,15 +8,15 @@
 
 declare(strict_types=1);
 
-namespace Mekras\JsonRpc\Exception\Client;
+namespace Mekras\JsonRpcClient\Exception\Client;
 
-use Mekras\JsonRpc\Exception\LogicException;
+use Mekras\JsonRpcClient\Exception\LogicException;
 
 /**
  * An exception on the client side.
  *
  * @since 1.0
  */
-abstract class ClientException extends LogicException
+class ClientException extends LogicException
 {
 }

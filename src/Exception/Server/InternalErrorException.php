@@ -8,7 +8,7 @@
 
 declare(strict_types=1);
 
-namespace Mekras\JsonRpc\Exception\Server;
+namespace Mekras\JsonRpcClient\Exception\Server;
 
 /**
  * Internal JSON-RPC error.

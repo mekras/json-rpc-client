@@ -8,9 +8,9 @@
 
 declare(strict_types=1);
 
-namespace Mekras\JsonRpc\Exception\Server;
+namespace Mekras\JsonRpcClient\Exception\Server;
 
-use Mekras\JsonRpc\Exception\RuntimeException;
+use Mekras\JsonRpcClient\Exception\RuntimeException;
 
 /**
  * An exception on the server side.
