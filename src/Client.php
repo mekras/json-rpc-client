@@ -126,7 +126,11 @@ class Client
 
         if (json_last_error() !== JSON_ERROR_NONE) {
             throw new InvalidResponseException(
-                sprintf('Server response is not a valid JSON: %s', json_last_error_msg())
+                sprintf(
+                    'Server response "%s" is not a valid JSON: %s',
+                    substr($contents, 0, 1024),
+                    json_last_error_msg()
+                )
             );
         }
 

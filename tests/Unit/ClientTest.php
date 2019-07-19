@@ -109,7 +109,7 @@ class ClientTest extends TestCase
             [
                 'response' => 'Not a JSON',
                 'expectedException' => InvalidResponseException::class,
-                'expectedExceptionMessage' => 'Server response is not a valid JSON: Syntax error'
+                'expectedExceptionMessage' => 'Server response "Not a JSON" is not a valid JSON: Syntax error'
             ],
             [
                 'response' => 'null',
