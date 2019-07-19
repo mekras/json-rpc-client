@@ -19,7 +19,7 @@ use Mekras\JsonRpcClient\Request;
 
 $client = new Client('http://example.com/rpc', $httpClient, $httpRequestFactory, $httpStreamFactory);
 
-$request = new Request('rpc_method', ['foo' => 'bar'], 12345);
+$request = new Request('rpc_method', ['foo' => 'bar'], '12345');
 
 try {
     $response = $client->sendRequest($request);
