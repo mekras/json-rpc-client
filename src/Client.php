@@ -234,7 +234,8 @@ class Client
             ->createRequest('POST', $this->endpoint)
             ->withHeader('Accept', 'application/json')
             ->withHeader('Content-Type', 'application/json')
-            ->withHeader('Content-Length', $contents->getSize());
+            ->withHeader('Content-Length', $contents->getSize())
+            ->withBody($contents);
 
         try {
             $httpResponse = $this->httpClient->sendRequest($httpRequest);

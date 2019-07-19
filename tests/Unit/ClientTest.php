@@ -214,6 +214,12 @@ class ClientTest extends TestCase
             )
             ->willReturnSelf();
 
+        $httpRequest
+            ->expects(self::once())
+            ->method('withBody')
+            ->with(self::identicalTo($requestStream))
+            ->willReturnSelf();
+
         $this->httpClient
             ->expects(self::once())
             ->method('sendRequest')
@@ -260,6 +266,12 @@ class ClientTest extends TestCase
                 ['Content-Type', 'application/json'],
                 ['Content-Length', 1024]
             )
+            ->willReturnSelf();
+
+        $httpRequest
+            ->expects(self::once())
+            ->method('withBody')
+            ->with(self::identicalTo($requestStream))
             ->willReturnSelf();
 
         $responseStream = $this->createConfiguredMock(
@@ -328,6 +340,12 @@ class ClientTest extends TestCase
                 ['Content-Type', 'application/json'],
                 ['Content-Length', 1024]
             )
+            ->willReturnSelf();
+
+        $httpRequest
+            ->expects(self::once())
+            ->method('withBody')
+            ->with(self::identicalTo($requestStream))
             ->willReturnSelf();
 
         $responseStream = $this->createConfiguredMock(
