@@ -1,7 +1,7 @@
 <?php
 
 /**
- * JSON-RPC Client.
+ * JSON-RPC client.
  *
  * @copyright Михаил Красильников <m.krasilnikov@yandex.ru>
  */
@@ -114,11 +114,11 @@ class Client
      *
      * @param ResponseInterface $httpResponse
      *
-     * @return Response|null
+     * @return Response
      *
      * @throws JsonRpcClientException
      */
-    private function convertResponse(ResponseInterface $httpResponse): ?Response
+    private function convertResponse(ResponseInterface $httpResponse): Response
     {
         $contents = (string) $httpResponse->getBody();
 
@@ -169,13 +169,13 @@ class Client
      *
      * @param Request $request
      *
-     * @return array
+     * @return array<mixed>
      */
     private function createPayload(Request $request): array
     {
         $payload = [
             'jsonrpc' => '2.0',
-            'method' => $request->getMethod()
+            'method' => $request->getMethod(),
         ];
 
         if (count($request->getParams()) > 0) {
@@ -192,14 +192,14 @@ class Client
     /**
      * Handle RPC error.
      *
-     * @param array $error
+     * @param array<mixed> $error
      *
      * @throws JsonRpcClientException
      */
     private function handleError(array $error): void
     {
         $code = (int) $error['code'];
-        $message = $error['message'] ?? '(server did not provide a description)';
+        $message = (string) ($error['message'] ?? '(server did not provide a description)');
 
         switch ($code) {
             case Errors::PARSE_ERROR:
@@ -220,8 +220,8 @@ class Client
     /**
      * Send HTTP request to RPC endpoint.
      *
-     * @param Request $request
-     * @param array   $payload
+     * @param Request      $request
+     * @param array<mixed> $payload
      *
      * @return ResponseInterface
      *
@@ -229,12 +229,12 @@ class Client
      */
     private function sendHttpRequest(Request $request, array $payload): ResponseInterface
     {
-        $contents = $this->httpStreamFactory->createStream(json_encode($payload));
+        $contents = $this->httpStreamFactory->createStream((string) json_encode($payload));
         $httpRequest = $this->httpRequestFactory
             ->createRequest('POST', $this->endpoint)
             ->withHeader('Accept', 'application/json')
             ->withHeader('Content-Type', 'application/json')
-            ->withHeader('Content-Length', $contents->getSize())
+            ->withHeader('Content-Length', (string) $contents->getSize())
             ->withBody($contents);
 
         try {

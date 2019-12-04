@@ -34,17 +34,17 @@ final class Request
     /**
      * Parameter values to be used during the invocation of the method.
      *
-     * @var array
+     * @var array<mixed>
      */
     private $params;
 
     /**
      * Create new request.
      *
-     * @param string      $method Name of the method to be invoked.
-     * @param array       $params Parameter values to be used during the invocation of the method.
-     * @param string|null $id     Request identifier. If it is not included it is assumed to be a
-     *                            notification.
+     * @param string       $method Name of the method to be invoked.
+     * @param array<mixed> $params Parameter values to be used during the invocation of the method.
+     * @param string|null  $id     Request identifier. If it is not included it is assumed to be a
+     *                             notification.
      *
      * @since 1.0
      */
@@ -82,7 +82,7 @@ final class Request
     /**
      * Return parameter values.
      *
-     * @return array
+     * @return array<mixed>
      *
      * @since 1.0
      */

@@ -80,7 +80,7 @@ class ClientTest extends TestCase
     /**
      * Provide test data for testHttpRequestFailure.
      *
-     * @return array
+     * @return array<array>
      */
     public function httpErrorProvider(): array
     {
@@ -101,7 +101,7 @@ class ClientTest extends TestCase
     /**
      * Provide test data for testServerError.
      *
-     * @return array
+     * @return array<array>
      */
     public function serverErrorProvider(): array
     {

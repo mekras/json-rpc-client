@@ -1,6 +1,7 @@
 {
     "name": "mekras/json-rpc-client",
-    "description": "JSON-RPC PSR-17/18 compatible client ",
+    "description": "JSON-RPC PSR-17/18 compatible client",
+    "type": "library",
     "keywords": [
         "json-rpc",
         "psr-17",
@@ -15,7 +16,7 @@
         }
     ],
     "require": {
-        "php": "^7.1",
+        "php": "^7.2",
         "ext-json": "*",
         "psr/http-client": "^1.0",
         "psr/http-factory": "^1.0"
@@ -26,7 +27,10 @@
         }
     },
     "require-dev": {
-        "phpunit/phpunit": "^7.5"
+        "phpunit/phpunit": "^7.5",
+        "phpstan/extension-installer": "^1.0",
+        "phpstan/phpstan-phpunit": "^0.12",
+        "phpstan/phpstan": "^0.12"
     },
     "autoload-dev": {
         "psr-4": {
